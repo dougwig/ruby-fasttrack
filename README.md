@@ -139,6 +139,10 @@ Common hash methods
 `p` prints the Ruby representation of an object
 
     p "Hello"         # prints '"Hello"'
+
+The `inspect` method is useful for debugging
+
+    print "ugly: #{[1,2,3]}, pretty: #{[1,2,3].inspect}"
    
 ## String interpolation
 
