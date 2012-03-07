@@ -21,6 +21,14 @@ Ruby has built-in code-coverage, debugger, profiler and benchmarking tools
 
 ## Basic types
 
+### Common keywords
+
+    Ruby  | Python 
+    --------------
+    true  | True   
+    false | False  
+    nil   | None   
+
 ### Strings
 
 Simple strings are as in Python
@@ -325,6 +333,18 @@ a `return`
       10
     end
 
+Parentheses are optional when calling Ruby functions.
+
+Python:
+
+    'Hello'.lower  
+	<built-in method lower of str object at 0x1081dbc90>  
+	
+Ruby:
+
+    'Hello'.downcase  
+	"hello"  
+
 You can be also be literal about (for example, to return from a different
 point in the function)
 
@@ -510,6 +530,53 @@ sugaring.
 
     # Ruby 1.9 syntax for lambdas
     foo_taking_lambda("Hello", -> arg { puts arg })
+
+## Classes
+
+Class variables are prefixed with "@", not "self."
+
+    class Foo
+      def bar
+        @n = 2
+      end
+    end
+
+Private methods are private, and not just a silly leading underscore naming convention.
+
+    class Foo
+    private
+      def suck_it_python
+        "can't call me from outside"
+      end
+    end
+
+Ruby has class methods, which do not require object instantiation.
+
+    class Foo
+      def bar
+        @n = 2
+      end
+    end
+    Foo.new.bar
+
+    class Bar
+      def self.foo
+        'hiya'
+      end
+    end
+    Bar.foo
+
+Classes can be modified on the fly, not just via inheritance.  This can quickly become an
+unreadable mess, so save it for extending/adding to classes via modules.
+
+    >> class String
+    >>   def foobar
+    >>     'hello world'
+    >>   end
+    >> end
+    => nil
+    >> "hello".foobar
+    => "hello world"
 
 ## Working with directories
 
