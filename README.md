@@ -338,12 +338,12 @@ Parentheses are optional when calling Ruby functions.
 Python:
 
     'Hello'.lower  
-	<built-in method lower of str object at 0x1081dbc90>  
+    <built-in method lower of str object at 0x1081dbc90>  
 	
 Ruby:
 
     'Hello'.downcase  
-	"hello"  
+    "hello"  
 
 You can be also be literal about (for example, to return from a different
 point in the function)
@@ -533,7 +533,7 @@ sugaring.
 
 ## Classes
 
-Class variables are prefixed with "@", not "self."
+Instance variables are prefixed with "@", not "self."
 
     class Foo
       def bar
@@ -569,14 +569,13 @@ Ruby has class methods, which do not require object instantiation.
 Classes can be modified on the fly, not just via inheritance.  This can quickly become an
 unreadable mess, so save it for extending/adding to classes via modules.
 
-    >> class String
-    >>   def foobar
-    >>     'hello world'
-    >>   end
-    >> end
-    => nil
-    >> "hello".foobar
-    => "hello world"
+    class String
+      def foobar
+        'hello world'
+      end
+    end
+    "hello".foobar
+    "hello world"
 
 ## Working with directories
 
